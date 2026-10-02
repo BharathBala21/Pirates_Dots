@@ -1,4 +1,4 @@
-local mat = require("colors")
+-- local mat = require("colors")
 hl.config (
     {
         decoration = {
@@ -25,6 +25,7 @@ hl.config (
             motion_blur = {
                 enabled = true
             },
+            
         },
     }
 )

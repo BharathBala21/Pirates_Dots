@@ -19,5 +19,7 @@ hl.env("XCURSOR_THEME", "Moga")
 hl.env("XCURSOR_SIZE", "24")
 
 
+
+
 -- For Noctalia Color templates
 require("noctalia").apply_theme()

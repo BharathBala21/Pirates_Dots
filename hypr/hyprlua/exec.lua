@@ -1,6 +1,7 @@
 hl.on("hyprland.start", function () 
   hl.exec_cmd("hyprpm reload")
   hl.exec_cmd("noctalia")
+  hl.exec_cmd("hyprctl reload")
   -- hl.exec_cmd("python3 ~/.local/src/HyprDots/tide-island/bin/apply_wallpaper.py --restore")
   -- hl.exec_cmd("quickshell -p ~/.local/src/HyprDots/tide-island/")
   -- hl.exec_cmd("systemctl --user start dunst")

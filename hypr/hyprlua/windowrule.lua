@@ -1,14 +1,6 @@
-local mat = require("colors")
 
-hl.window_rule({
-	match = {
-		class = "kitty",
-		title = "btop",
-	},
-	float = true,
-	size = { 1000, 750 },
-	center = true,
-})
+
+
 
 hl.window_rule({
 

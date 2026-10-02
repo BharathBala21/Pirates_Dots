@@ -38,10 +38,10 @@ hl.bind(mainMod .. "+ 8",hl.dsp.focus({workspace = 8}))
 hl.bind(mainMod .. "+ 9",hl.dsp.focus({workspace = 9}))
 
 --Change FOCUSED Window
-hl.bind(mainMod .. "+ left", hl.dsp.focus({direction = "l"}))
-hl.bind(mainMod .. "+ right", hl.dsp.focus({direction = "r"}))
-hl.bind(mainMod .. "+ up", hl.dsp.focus({direction = "up"}))
-hl.bind(mainMod .. "+ down", hl.dsp.focus({direction = "down"}))
+hl.bind(mainMod .. "+ left", hl.dsp.layout("focus l"))
+hl.bind(mainMod .. "+ right", hl.dsp.layout("focus r"))
+hl.bind(mainMod .. "+ up", hl.dsp.layout("focus up"))
+hl.bind(mainMod .. "+ down", hl.dsp.layout("focus down"))
 
 
 -- move to next/previous workspace
@@ -101,7 +101,7 @@ hl.bind("SUPER+ALT+RETURN", function ()
     local mon = hl.get_active_monitor()
     local left = math.floor(math.ceil(mon.width / mon.scale or 1) * 0.5)
     hl.dispatch(hl.dsp.workspace.toggle_special("terminal_special"))
-    hl.workspace_rule({workspace = "special:terminal_special", on_created_empty = "kitty",layout = "scrolling",gaps_out = { left = left, right = 0, top = 0, bottom = 0 },})
+    hl.workspace_rule({workspace = "special:terminal_special", on_created_empty = "kitty",layout = "dwindle",gaps_out = { left = left, right = 0, top = 0, bottom = 0 },})
 end)
 
 
@@ -117,9 +117,9 @@ hl.bind("SUPER + L", hl.dsp.exec_cmd("~/.local/src/HyprDots/tide-island/lockscre
 
 
 --NIRI-LIKE_OVERVIEW
-hl.bind("SUPER + TAB", function()
-    hl.plugin.scrolloverview.overview("toggle")
-end)
+-- hl.bind("SUPER + TAB", function()
+--     hl.plugin.scrolloverview.overview("toggle")
+-- end)
 
 
 
@@ -130,8 +130,8 @@ hl.bind("SUPER + minus", hl.dsp.layout("colresize -0.1"))
 hl.bind("SUPER+bracketright",hl.dsp.layout("swapcol r"))
 hl.bind("SUPER+bracketleft",hl.dsp.layout("swapcol l"))
 hl.bind("SUPER+I",hl.dsp.layout("fit visible"))
-hl.bind("SUPER + SHIFT+ mouse_down", hl.dsp.focus({ direction = "r" }),{non_consuming = false})
-hl.bind("SUPER + SHIFT+ mouse_up", hl.dsp.focus({ direction = "l" }),{non_consuming = false})
+hl.bind("SUPER + mouse_down", hl.dsp.layout("focus r"))
+hl.bind("SUPER + mouse_up", hl.dsp.layout("focus l"))
 
 
 hl.bind("SUPER +SHIFT+ P", hl.dsp.layout("promote"))
